@@ -18,40 +18,81 @@ function writePassword() {
   
   if (numberOfCharacters >= 8 && numberOfCharacters <= 128 ) {
 
-     var confirmSpecialCharacters = window.confirm('Click OK if you want to include Special Characters.');
-     console.log(confirmSpecialCharacters);
+    function generatePassword() {
+      var special = window.confirm('Click OK if you want to include Special Characters.');
+      console.log(special);
 
-     var confirmNumbericCharacters = window.confirm('Click OK if you want to include Numberic Characters.');
-     console.log(confirmNumbericCharacters);
+      var numeric = window.confirm('Click OK if you want to include Numberic Characters.');
+      console.log(numeric);
 
-     var confirmLowerCaseCharacters = window.confirm('Click OK if you want to include Lower Case Characters.');
-     console.log(confirmLowerCaseCharacters);
+      var lower = window.confirm('Click OK if you want to include Lower Case Characters.');
+      console.log(lower);
 
-     var confirmUpperCaseCharacters = window.confirm('Click OK if you want to include Upper Case Characters.');
-     console.log(confirmUpperCaseCharacters);
+      var upper = window.confirm('Click OK if you want to include Upper Case Characters.');
+      console.log(upper);
      
-   }
+    }  
 
+      if ( special === true && numeric === true && lower === true && upper === true ) {
+        window.alert('ALL TRUE');
+      }
+      else if (special === true && numeric === false && lower === false && upper === false) {
+        window.alert('SPECIAL');
+      }
+      else if (special === false && numeric === true && lower === false && upper === false) {
+        window.alert('NUMERIC');
+      }
+      else if (special === false && numeric === false && lower === true && upper === false) {
+        window.alert('LOWER');
+      }
+      else if (special === false && numeric === false && lower === false && upper === true) {
+        window.alert('UPPER');
+      }
+      else if (special === true && numeric === true && lower === false && upper === false) {
+        window.alert('SPECIAL / NUMERIC');
+      }
+      else if (special === true && numeric === false && lower === true && upper === false) {
+        window.alert('SPECIAL / LOWER');
+      }
+      else if (special === true && numeric === false && lower === false && upper === true) {
+        window.alert('SPECIAL / UPPER');
+      }
+      else if (special === true && numeric === false && lower === true && upper === true) {
+        window.alert('SPECIAL / LOWER / UPPER');
+      }
+      else if (special === true && numeric === true && lower === false && upper === true) {
+        window.alert('SPECIAL / NUMERIC / UPPER');
+      }
+      else if (special === true && numeric === true && lower === true && upper === false) {
+        window.alert('SPECIAL / NUMERIC / LOWER');
+      }
+      else if (special === false && numeric === true && lower === true && upper === false) {
+        window.alert('NUMERIC / LOWER');
+      }
+      else if (special === false && numeric === true && lower === false && upper === true) {
+        window.alert('NUMERIC / UPPER');
+      }
+      else if (special === false && numeric === true && lower === true && upper === true) {
+        window.alert('NUMERIC / LOWER / UPPER');
+      }
+      else if (special === false && numeric === false && lower === true && upper === true) {
+        window.alert('LOWER / UPPER');
+      }
+      else {
+        window.alert('You must confirm at least one character type.');
+      };
+  
+/*  THIS WAS GIVEN TO US */
+      var password = generatePassword();
+      var passwordText = document.querySelector("#password");
+      passwordText.value = password;
+/*  THIS WAS GIVEN TO US */
 
+  }
   else {
-     window.alert('Password Length must be a Number between 8 and 128 characters.');
-     return writePassword();
-   }
-
- 
-
-
-
-
-
-  
-
-  
-/*  THIS WAS GIVEN TO US */
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-  // passwordText.value = password;
-/*  THIS WAS GIVEN TO US */
+    window.alert('Password Length must be a Number between 8 and 128 characters.');
+    return writePassword();
+  }
 
 }
 
