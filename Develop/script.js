@@ -8,46 +8,27 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
 
   var numberOfCharacters = window.prompt('How many characters would you like your password to contain?');
-
-      numberOfCharacters = parseInt(numberOfCharacters);    
+  if (numberOfCharacters === null) {
+    window.alert('When you are ready to create a new password, please re-click the generate password button below.');
+    return;
+  };
+  numberOfCharacters = parseInt(numberOfCharacters); // turns all inputs into  a number
   
-      if ( numberOfCharacters === null ) {
-        window.alert('When you are ready to generate a password; please re-click the Generate Password Button below.');
-        return;
-      }
-      // if ( numberOfCharacters == NaN ) {
-      //   window.alert('Password Length must be provided as a number.');
-      //   return writePassword();
-      // }
+  if (numberOfCharacters >= 8 && numberOfCharacters <= 128 ) {
+     window.alert('You got me')
+   }
+  else {
+     window.alert('Password Length must be a Number between 8 and 128 characters.');
+     return writePassword();
+   }
 
-      // if ( numberOfCharacters <= 7 ) {
-      //   window.alert('Password Length must be at least 8 characters.');
-      //   return writePassword();
-      // }
-      // if ( numberOfCharacters >= 129 ) {
-      //   window.alert('Password Length must be less than 129 characters.');
-      //   return writePassword();
-      // }
-      
+ 
 
 
 
 
 
-      // if ( numberOfCharacters == null || typeof numberOfCharacters == 'string' || typeof numberOfCharacters == String || numberOfCharacters instanceof String ) {
-      //   window.alert('Password Length must be provided as a number.');
-      //   return writePassword();
-      // }
-      // if ( numberOfCharacters < 8 ) {
-      //   window.alert('Password Length must be at least 8 characters.');
-      //   return writePassword();
-      // }
-      // if ( numberOfCharacters > 128 ) {
-      //   window.alert('Password Length must be less than 129 characters.');
-      //   return writePassword();
-      // }
-
-  console.log(numberOfCharacters);
+  
 
   // if ( typeof numberOfCharacters == 'string' || numberOfCharacters instanceof String || numberOfCharacters == null  )
 /*  THIS WAS GIVEN TO US */
