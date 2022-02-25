@@ -25,16 +25,12 @@ function writePassword() {
 
     function generatePassword() {
       var special = window.confirm('Click OK if you want to include Special Characters.');
-      console.log(special);
 
       var numeric = window.confirm('Click OK if you want to include Numberic Characters.');
-      console.log(numeric);
 
       var lower = window.confirm('Click OK if you want to include Lower Case Characters.');
-      console.log(lower);
 
       var upper = window.confirm('Click OK if you want to include Upper Case Characters.');
-      console.log(upper);
 
       if ( special === true && numeric === true && lower === true && upper === true ) {
         var allCharactersArr = specialCharacters.concat(numberCharacters, upperCharacters, lowerCharacters );
@@ -42,56 +38,66 @@ function writePassword() {
           selectedCharacters.push(allCharactersArr[Math.floor(Math.random() * allCharactersArr.length)]);
         }
       }
+      
       else if (special === true && numeric === false && lower === false && upper === false) {
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
         }
       }
+
       else if (special === false && numeric === true && lower === false && upper === false) {
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(numberCharacters[Math.floor(Math.random() * numberCharacters.length)]);
         }
       }
+
       else if (special === false && numeric === false && lower === true && upper === false) {
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(lowerCharacters[Math.floor(Math.random() * lowerCharacters.length)]);
         }
       }
+
       else if (special === false && numeric === false && lower === false && upper === true) {
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(upperCharacters[Math.floor(Math.random() * upperCharacters.length)]);
         }
       }
+
       else if (special === true && numeric === true && lower === false && upper === false) {
         var specialNumberArr = specialCharacters.concat(numberCharacters);
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(specialNumberArr[Math.floor(Math.random() * specialNumberArr.length)]);
         }
       }
+
       else if (special === true && numeric === false && lower === true && upper === false) {
         var specialLowerArr = specialCharacters.concat(lowerCharacters);
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(specialLowerArr[Math.floor(Math.random() * specialLowerArr.length)]);
         }
       }
+
       else if (special === true && numeric === false && lower === false && upper === true) {
         var specialUpperArr = specialCharacters.concat(upperCharacters);
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(specialUpperArr[Math.floor(Math.random() * specialUpperArr.length)]);
         }
       }
+
       else if (special === true && numeric === false && lower === true && upper === true) {
         var specialLowerUpperArr = specialCharacters.concat(upperCharacters, lowerCharacters );
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(specialLowerUpperArr[Math.floor(Math.random() * specialLowerUpperArr.length)]);
         }
       }
+
       else if (special === true && numeric === true && lower === false && upper === true) {
         var specialNumberUpperArr = specialCharacters.concat(numberCharacters, upperCharacters );
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(specialNumberUpperArr[Math.floor(Math.random() * specialNumberUpperArr.length)]);
         }
       }
+
       else if (special === true && numeric === true && lower === true && upper === false) {
         var specialNumberLowerArr = specialCharacters.concat(numberCharacters, lowerCharacters );
         for(var i = 0; i < numberOfCharacters; i++) {
@@ -138,11 +144,11 @@ function writePassword() {
     }
 
     
-    /*  THIS WAS GIVEN TO US */
+// Give a start
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
-    /*  THIS WAS GIVEN TO US */
+
   }
 
   else {
