@@ -42,7 +42,7 @@ function writePassword() {
 
         // return newPassword;
       }
-
+// TESTED GOOD
       else if (special === true && numeric === false && lower === false && upper === false) {
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
@@ -63,25 +63,24 @@ function writePassword() {
           selectedCharacters.push(upperCharacters[Math.floor(Math.random() * upperCharacters.length)]);
         }
       }
-
+// TESTED GOOD
       else if (special === true && numeric === true && lower === false && upper === false) {
-        window.alert('SPECIAL / NUMERIC');
-        // var newPassword = [];
-        /* FOR LOOP LOGIC*/
-        // return newPassword;
+        var specialNumberArr = specialCharacters.concat(numberCharacters);
+        for(var i = 0; i < numberOfCharacters; i++) {
+          selectedCharacters.push(specialNumberArr[Math.floor(Math.random() * specialNumberArr.length)]);
+        }
       }
       else if (special === true && numeric === false && lower === true && upper === false) {
-        window.alert('SPECIAL / LOWER');
-        // var newPassword = [];
-        /* FOR LOOP LOGIC*/
-        // return newPassword;
+        var specialLowerArr = specialCharacters.concat(lowerCharacters);
+        for(var i = 0; i < numberOfCharacters; i++) {
+          selectedCharacters.push(specialLowerArr[Math.floor(Math.random() * specialLowerArr.length)]);
+        }
       }
-
       else if (special === true && numeric === false && lower === false && upper === true) {
-        window.alert('SPECIAL / UPPER');
-        // var newPassword = [];
-        /* FOR LOOP LOGIC*/
-        // return newPassword;
+        var specialUpperArr = specialCharacters.concat(upperCharacters);
+        for(var i = 0; i < numberOfCharacters; i++) {
+          selectedCharacters.push(specialUpperArr[Math.floor(Math.random() * specialUpperArr.length)]);
+        }
       }
 
       else if (special === true && numeric === false && lower === true && upper === true) {
@@ -105,18 +104,19 @@ function writePassword() {
       }
 
       else if (special === false && numeric === true && lower === true && upper === false) {
-        window.alert('NUMERIC / LOWER');
-        // var newPassword = [];
-        /* FOR LOOP LOGIC*/
-        // return newPassword;
+        var numberLowerArr = numberCharacters.concat(lowerCharacters);
+        for(var i = 0; i < numberOfCharacters; i++) {
+          selectedCharacters.push(numberLowerArr[Math.floor(Math.random() * numberLowerArr.length)]);
+        }
       }
 
       else if (special === false && numeric === true && lower === false && upper === true) {
-        window.alert('NUMERIC / UPPER');
-        // var newPassword = [];
-        /* FOR LOOP LOGIC*/
-        // return newPassword;
+        var numberUpperArr = numberCharacters.concat(upperCharacters);
+        for(var i = 0; i < numberOfCharacters; i++) {
+          selectedCharacters.push(numberUpperArr[Math.floor(Math.random() * numberUpperArr.length)]);
+        }
       }
+
       else if (special === false && numeric === true && lower === true && upper === true) {
         window.alert('NUMERIC / LOWER / UPPER');
         // var newPassword = [];
@@ -126,9 +126,10 @@ function writePassword() {
 
       else if (special === false && numeric === false && lower === true && upper === true) {
         window.alert('LOWER / UPPER');
-        // var newPassword = [];
-        /* FOR LOOP LOGIC*/
-        // return newPassword;
+         var lowerUpperArr = lowerCharacters.concat(upperCharacters);
+        for(var i = 0; i < numberOfCharacters; i++) {
+          selectedCharacters.push(lowerUpperArr[Math.floor(Math.random() * lowerUpperArr.length)]);
+        }
       }
 
       else {
