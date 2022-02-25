@@ -20,7 +20,7 @@ function writePassword() {
   numberOfCharacters = parseInt(numberOfCharacters);
   
   if (numberOfCharacters >= 8 && numberOfCharacters <= 128 ) {
-
+    // var newPassword = [];
     function generatePassword() {
       var special = window.confirm('Click OK if you want to include Special Characters.');
       console.log(special);
@@ -49,10 +49,25 @@ function writePassword() {
 
       else if (special === false && numeric === true && lower === false && upper === false) {
         window.alert('NUMERIC');
+
+        var newPassword = [];
         for(var i = 0; i < numberOfCharacters; i++) {
-          var randomAnswer = numberCharacters[Math.floor(Math.random() * numberCharacters.length)];
-          console.log(randomAnswer);
+          // var newPassword = [];
+          newPassword.push(numberCharacters[Math.floor(Math.random() * numberCharacters.length)]);
+          console.log(newPassword);
+          // return newPassword;
+
+
+
+
+
+          // newPassword = numberCharacters[Math.floor(Math.random() * numberCharacters.length)];
+          // var randomAnswer = numberCharacters[Math.floor(Math.random() * numberCharacters.length)];
+          // console.log(newPassword);
+          // return newPassword;
+          // console.log(randomAnswer);
         }
+        return newPassword;
       }
 
       else if (special === false && numeric === false && lower === true && upper === false) {
