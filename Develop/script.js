@@ -42,7 +42,6 @@ function writePassword() {
 
         // return newPassword;
       }
-// TESTED GOOD
       else if (special === true && numeric === false && lower === false && upper === false) {
         for(var i = 0; i < numberOfCharacters; i++) {
           selectedCharacters.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
@@ -63,7 +62,6 @@ function writePassword() {
           selectedCharacters.push(upperCharacters[Math.floor(Math.random() * upperCharacters.length)]);
         }
       }
-// TESTED GOOD
       else if (special === true && numeric === true && lower === false && upper === false) {
         var specialNumberArr = specialCharacters.concat(numberCharacters);
         for(var i = 0; i < numberOfCharacters; i++) {
@@ -85,9 +83,10 @@ function writePassword() {
 
       else if (special === true && numeric === false && lower === true && upper === true) {
         window.alert('SPECIAL / LOWER / UPPER');
-        // var newPassword = [];
-        /* FOR LOOP LOGIC*/
-        // return newPassword;
+        var specialLowerUpperArr = specialCharacters.concat(upperCharacters, lowerCharacters );
+        for(var i = 0; i < numberOfCharacters; i++) {
+          selectedCharacters.push(specialLowerUpperArr[Math.floor(Math.random() * specialLowerUpperArr.length)]);
+        }
       }
       else if (special === true && numeric === true && lower === false && upper === true) {
         window.alert('SPECIAL / NUMERIC / UPPER');
@@ -159,10 +158,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-/* 
-User clicks generate password
-
-
-after last confirm password is displayed in textarea
-*/
