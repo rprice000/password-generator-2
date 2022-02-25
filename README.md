@@ -60,6 +60,9 @@ There are no technologies that need to be installed for this application.
 ## Testing
 There are no testing dependencies for this application.
 
+## Screeenshots
+All screen shots are located in: /assets/images/...
+
 ## Links
 GitHub Repo
 https://github.com/rprice000/password-generator-2
