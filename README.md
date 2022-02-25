@@ -65,7 +65,7 @@ GitHub Repo
 https://github.com/rprice000/password-generator-2
 
 Deployed GitHub Page
-
+https://rprice000.github.io/password-generator-2/
 
 ## Version
 - 2.0.0
