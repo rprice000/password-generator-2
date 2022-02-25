@@ -20,7 +20,9 @@ function writePassword() {
   numberOfCharacters = parseInt(numberOfCharacters);
   
   if (numberOfCharacters >= 8 && numberOfCharacters <= 128 ) {
-    // var newPassword = [];
+
+    var selectedCharacters = [];
+
     function generatePassword() {
       var special = window.confirm('Click OK if you want to include Special Characters.');
       console.log(special);
@@ -36,125 +38,114 @@ function writePassword() {
 
       if ( special === true && numeric === true && lower === true && upper === true ) {
         window.alert('ALL TRUE');
-        var newPassword = [];
+        // var newPassword = [];
 
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === true && numeric === false && lower === false && upper === false) {
-        window.alert('SPECIAL');
-        var newPassword = [];
         for(var i = 0; i < numberOfCharacters; i++) {
-          var randomAnswer = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-          console.log(randomAnswer);
+          selectedCharacters.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
         }
-        return newPassword;
       }
-
-/* TESTING HERE */
       else if (special === false && numeric === true && lower === false && upper === false) {
-        window.alert('NUMERIC');
-
-        var newPassword = [];
-
         for(var i = 0; i < numberOfCharacters; i++) {
-          newPassword.push(numberCharacters[Math.floor(Math.random() * numberCharacters.length)]);
-          console.log(newPassword);
+          selectedCharacters.push(numberCharacters[Math.floor(Math.random() * numberCharacters.length)]);
         }
-        console.log(newPassword.join(''));
-        combinedCharacters = newPassword.join('');
-        console.log(newPassword);
-        console.log(combinedCharacters);
-        return combinedCharacters;
-
       }
-/* TESTING HERE */
+
+
+
+
+
+
+
 
       else if (special === false && numeric === false && lower === true && upper === false) {
         window.alert('LOWER');
-        var newPassword = [];
+        // var newPassword = [];
         for(var i = 0; i < numberOfCharacters; i++) {
           var randomAnswer = lowerCharacters[Math.floor(Math.random() * lowerCharacters.length)];
           console.log(randomAnswer);
         }
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === false && numeric === false && lower === false && upper === true) {
         window.alert('UPPER');
-        var newPassword = [];
+        // var newPassword = [];
         for(var i = 0; i < numberOfCharacters; i++) {
           var randomAnswer = upperCharacters[Math.floor(Math.random() * upperCharacters.length)];
           console.log(randomAnswer);
         }
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === true && numeric === true && lower === false && upper === false) {
         window.alert('SPECIAL / NUMERIC');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
       else if (special === true && numeric === false && lower === true && upper === false) {
         window.alert('SPECIAL / LOWER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === true && numeric === false && lower === false && upper === true) {
         window.alert('SPECIAL / UPPER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === true && numeric === false && lower === true && upper === true) {
         window.alert('SPECIAL / LOWER / UPPER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
       else if (special === true && numeric === true && lower === false && upper === true) {
         window.alert('SPECIAL / NUMERIC / UPPER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === true && numeric === true && lower === true && upper === false) {
         window.alert('SPECIAL / NUMERIC / LOWER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === false && numeric === true && lower === true && upper === false) {
         window.alert('NUMERIC / LOWER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === false && numeric === true && lower === false && upper === true) {
         window.alert('NUMERIC / UPPER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
       else if (special === false && numeric === true && lower === true && upper === true) {
         window.alert('NUMERIC / LOWER / UPPER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
 
       else if (special === false && numeric === false && lower === true && upper === true) {
         window.alert('LOWER / UPPER');
-        var newPassword = [];
+        // var newPassword = [];
         /* FOR LOOP LOGIC*/
-        return newPassword;
+        // return newPassword;
       }
 
       else {
@@ -162,7 +153,12 @@ function writePassword() {
         return generatePassword();
       };
 
+      var combinedCharacters = selectedCharacters.join('');
+      return combinedCharacters;
+
     }
+
+    
     /*  THIS WAS GIVEN TO US */
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
