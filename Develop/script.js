@@ -53,32 +53,15 @@ function writePassword() {
           selectedCharacters.push(numberCharacters[Math.floor(Math.random() * numberCharacters.length)]);
         }
       }
-
-
-
-
-
-
-
-
       else if (special === false && numeric === false && lower === true && upper === false) {
-        window.alert('LOWER');
-        // var newPassword = [];
         for(var i = 0; i < numberOfCharacters; i++) {
-          var randomAnswer = lowerCharacters[Math.floor(Math.random() * lowerCharacters.length)];
-          console.log(randomAnswer);
+          selectedCharacters.push(lowerCharacters[Math.floor(Math.random() * lowerCharacters.length)]);
         }
-        // return newPassword;
       }
-
       else if (special === false && numeric === false && lower === false && upper === true) {
-        window.alert('UPPER');
-        // var newPassword = [];
         for(var i = 0; i < numberOfCharacters; i++) {
-          var randomAnswer = upperCharacters[Math.floor(Math.random() * upperCharacters.length)];
-          console.log(randomAnswer);
+          selectedCharacters.push(upperCharacters[Math.floor(Math.random() * upperCharacters.length)]);
         }
-        // return newPassword;
       }
 
       else if (special === true && numeric === true && lower === false && upper === false) {
